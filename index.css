@@ -1,0 +1,107 @@
+html {
+    touch-action: manipulation;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.haikei {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    transition: all 0.5s ease;
+}
+
+.pre-back {
+    background-color: rgb(7, 7, 7);
+}
+
+.comp-back {
+    background: repeating-conic-gradient(
+        rgb(255, 20, 20) 0deg 15deg,
+        white 15deg 30deg
+    );
+    animation: kaiten 15s linear infinite;
+    width: 1000%;
+    height: 1000%;
+}
+
+@keyframes kaiten {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.otoshidama {
+    z-index: 2;
+    position: relative;
+    width: 20%;
+    max-width: 100px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.start:hover {
+    transform: scale(1.2);
+}
+
+.prepare {
+    transform: translateY(75vh) scale(5);
+}
+
+.complete {
+    transform: translateY(100vh);
+}
+
+.bill {
+    position: absolute;
+    z-index: 1;
+    width: 20vw;
+    max-width: 200px;
+    transform: translateY(100vh);
+    transition: all .3s ease;
+}
+
+.entry-bill {
+    transform: translateY(0) scale(2.5);
+}
+
+.manu {
+    position: fixed;
+    bottom: 10vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 300px;
+    }
+
+    input {
+        padding: 7px;
+        border-radius: 20px;
+        border: 1px solid;
+        background: none;
+        cursor: pointer;
+    }
+}
+
+.none {
+    display: none;
+}
